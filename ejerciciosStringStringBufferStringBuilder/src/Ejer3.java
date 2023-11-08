@@ -8,9 +8,9 @@ public class Ejer3 {
         String output = " ";
 
         for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
-            c++;
-            output += c;
+            char caracter = input.charAt(i);
+            caracter++;
+            output += caracter;
         }
 
         System.out.println("El resultado es:" + output);

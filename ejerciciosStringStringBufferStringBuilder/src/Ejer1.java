@@ -9,12 +9,12 @@ public class Ejer1 {
         StringBuilder output = new StringBuilder();
 
         for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
-            if (Character.isLowerCase(c)) {
+            char caracter = input.charAt(i);
+            if (Character.isLowerCase(caracter)) {
                 contador++;
-                output.append(Character.toUpperCase(c));
+                output.append(Character.toUpperCase(caracter));
             } else {
-                output.append(c);
+                output.append(caracter);
             }
         }
 

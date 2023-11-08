@@ -8,9 +8,9 @@ public class Ejer2 {
         int contador = 0;
 
         for (int i = 0; i < input.length(); i++) {
-            char character = input.charAt(i);
-            String characterString = String.valueOf(character);
-            if (characterString.equals(" ") || characterString.equals(".") || characterString.equals(",")) {
+            char caracter = input.charAt(i);
+            String caracterString = String.valueOf(caracter);
+            if (caracterString.equals(" ") || caracterString.equals(".") || caracterString.equals(",")) {
                 contador++;
             }
         }
