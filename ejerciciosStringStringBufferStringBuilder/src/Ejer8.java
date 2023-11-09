@@ -31,5 +31,7 @@ public class Ejer8 {
         }
 
         System.out.println(suma);
+
+        scanner.close();
     }
 }
