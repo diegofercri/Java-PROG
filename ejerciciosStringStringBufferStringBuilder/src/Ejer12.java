@@ -18,6 +18,5 @@ public class Ejer12 {
         System.out.println(sb.toString().trim() + ".");
 
         scanner.close();
-
     }
 }
