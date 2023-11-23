@@ -12,8 +12,7 @@ public class Ejer5 {
          * Resultado: muchisimo lenguaje
          * 
          * Nota: Supondremos que la frase que nos escriben por teclado está perfecta y
-         * no
-         * tiene símbolos ni cosas raras. El programa debe funcionar con mayúsculas y
+         * no tiene símbolos ni cosas raras. El programa debe funcionar con mayúsculas y
          * minúsculas.
          */
 
@@ -30,9 +29,8 @@ public class Ejer5 {
             palabra = tkn.nextToken();
             /*
              * Para cada caracter comprobamos si coincide con una vocal, si coincide y no ha
-             * coincidido antes sumamos 1 a los contadores
-             * y si el contador es mayor a 2 subimos la bandera para saber que tiene 3
-             * vocales distintas y rompemos el bucle.
+             * coincidido antes sumamos 1 a los contadores, y si el contador de vocales diferentes
+             * es mayor a 2 subimos la bandera y rompemos el bucle.
              */
             for (int i = 0; i < palabra.length(); i++) {
                 char c = palabra.toLowerCase().charAt(i);
@@ -78,13 +76,13 @@ public class Ejer5 {
                 sb.append(palabra + " ");
             }
         }
-        // Si el StringBuilder no está vacío imprimimos las palabras con mas de 3 vocales
+        // Si el StringBuilder no está vacío imprimimos las palabras con mas de 3 vocales y quitamos el espacio final
         if (sb.length() > 0) {
             System.out.println("Las palabras con más de 3 vocales distintas son: " + sb.toString().trim());
         } else {
             System.out.println("La frase no tiene palabras con más de 3 vocales distintas.");
         }
-        
+
         scanner.close();
     }
 }
