@@ -56,12 +56,14 @@ public class Ejer4 {
 
         // Hacemos la multiplicación de las dos partes
         int multiplicacion = num1 * num2;
-        
+
         // Comprovamos si es o no igual
         if (multiplicacion == num) {
             System.out.println("El número " + num + " es vampiro.");
         } else {
             System.out.println("El número " + num + " no es vampiro.");
         }
+
+        scanner.close();
     }
 }
