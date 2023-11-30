@@ -8,6 +8,12 @@ public class Ejer3 {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("");
+        System.out.print("Introduce el nombre de la persona: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Introduce la direccion de la persona: ");
+        String direccion = scanner.nextLine();
+        int[][] agenda;
+
+        agenda.
     }
 }
