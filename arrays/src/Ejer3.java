@@ -28,5 +28,7 @@ public class Ejer3 {
         // Imprimimos en pantalla las columnas de a la fila indicada por el usuario
         System.out.println("Nombre: " + personas[index][0]);
         System.out.println("Dirección: " + personas[index][1]);
+
+        scanner.close();
     }
 }
