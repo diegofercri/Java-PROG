@@ -1,0 +1,154 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Ejer1",
+            "request": "launch",
+            "mainClass": "Ejer1",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer10",
+            "request": "launch",
+            "mainClass": "Ejer10",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer11",
+            "request": "launch",
+            "mainClass": "Ejer11",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer12",
+            "request": "launch",
+            "mainClass": "Ejer12",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer13",
+            "request": "launch",
+            "mainClass": "Ejer13",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer14",
+            "request": "launch",
+            "mainClass": "Ejer14",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer15",
+            "request": "launch",
+            "mainClass": "Ejer15",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer16",
+            "request": "launch",
+            "mainClass": "Ejer16",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer17",
+            "request": "launch",
+            "mainClass": "Ejer17",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer2",
+            "request": "launch",
+            "mainClass": "Ejer2",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer2_2",
+            "request": "launch",
+            "mainClass": "Ejer2_2",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer3",
+            "request": "launch",
+            "mainClass": "Ejer3",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer4",
+            "request": "launch",
+            "mainClass": "Ejer4",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer4_2",
+            "request": "launch",
+            "mainClass": "Ejer4_2",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer5",
+            "request": "launch",
+            "mainClass": "Ejer5",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer6",
+            "request": "launch",
+            "mainClass": "Ejer6",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer7",
+            "request": "launch",
+            "mainClass": "Ejer7",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer8",
+            "request": "launch",
+            "mainClass": "Ejer8",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer8_2",
+            "request": "launch",
+            "mainClass": "Ejer8_2",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
+            "name": "Ejer9",
+            "request": "launch",
+            "mainClass": "Ejer9",
+            "projectName": "JavaPROG_cc9e73c7"
+        }
+    ]
+}
