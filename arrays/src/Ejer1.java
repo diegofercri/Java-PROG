@@ -7,6 +7,7 @@ public class Ejer1 {
      * array.
      */
     public static void main(String[] args) throws Exception {
+        int num[] = new int[20];
         
     }
 }
