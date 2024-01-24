@@ -15,5 +15,5 @@ public class Ejer4 {
         System.out.println("La palabra rotada es: " + output);
 
         scanner.close();
-    } 
+    }
 }
