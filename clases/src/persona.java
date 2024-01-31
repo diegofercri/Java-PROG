@@ -11,7 +11,4 @@ public class persona {
         this.nombre = nombre;
         this.tlf = tlf;
     }
-
-    
-
 }
