@@ -19,5 +19,7 @@ public class Ejer1 {
         }
 
         System.out.println("El numero se repite: " + contador + " veces.");
+    
+        numAnterior.close();
     }
 }
