@@ -1,4 +1,4 @@
-public class persona {
+/* public class persona {
     // Atributos
     private String dni;
     private String nombre;
