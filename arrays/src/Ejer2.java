@@ -8,7 +8,7 @@ public class Ejer2 {
         int numAnterior = 0;
         boolean ordenado = true;
 
-        for (int i = 0; i < numeros.length-1; i++) {
+        for (int i = 0; i < numeros.length; i++) {
             int num = numeros[i];
             if (num >= numAnterior) {
                 numAnterior = num;

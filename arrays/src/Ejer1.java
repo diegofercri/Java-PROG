@@ -7,13 +7,13 @@ public class Ejer1 {
      * array.
      */
     public static void main(String[] args) throws Exception {
-        int numeros[] = {1,2,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        int numeros[] = {1,2,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,2};
         System.out.print("Introduce un numero y te dire cuantas veces se repite dentro de un array: ");
         Scanner input = new Scanner (System.in);
         int numero = input.nextInt();
         int contador = 0;
 
-        for (int i = 0; i < numeros.length-1; i++) {
+        for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] == numero) {
                 contador++;
             }
