@@ -14,12 +14,11 @@ public class Ejer10 {
 
         for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array[i].length; j++) {
-				if(i+j <=4) {
+				if(i+j < 5) {
 					array[i][j] = i + j;
 				} else {
 					array[i][j] = 8 - ( i + j );
 				}
-				
 			}
 		}
 
