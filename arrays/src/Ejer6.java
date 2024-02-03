@@ -7,7 +7,12 @@ public class Ejer6 {
      * 0 0 0 1
     */
     public static void main(String[] args) throws Exception {
-        int array[][] = {{0,0,0,0}, {0,0,0,0}, {0,0,0,0}, {0,0,0,0}};
+        int array[][] = {
+            {0,0,0,0},
+            {0,0,0,0},
+            {0,0,0,0},
+            {0,0,0,0}
+        };
         for (int i = 0; i < array.length; i++) {
             array[i][i] = 1;
         }
