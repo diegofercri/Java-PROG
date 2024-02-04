@@ -37,6 +37,6 @@ public class Ejer14 {
             System.out.println(Arrays.toString(tablero[i]));
         }
 
-        
+        input.close();
     }
 }
