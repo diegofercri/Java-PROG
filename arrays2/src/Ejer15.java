@@ -63,5 +63,7 @@ public class Ejer15 {
         for (int i = 0; i < array.length; i++) {
             System.out.println(Arrays.toString(array[i]));
         }
+
+        input.close();
     }
 }
