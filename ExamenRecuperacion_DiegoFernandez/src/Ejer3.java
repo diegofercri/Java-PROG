@@ -7,7 +7,9 @@ public class Ejer3 {
             array[i] = (int) (Math.random() * 99) + 1;
         }
 
+        // Inicializo la diferencia en el valor maximo posible
         int diferenciaCentro = Integer.MAX_VALUE;
+        // Inicializo el centro en -1 para saber si no se ha encontrado ningun centro
         int indexCentro = -1;
 
         for (int i = 0; i < array.length; i++) {
@@ -27,7 +29,7 @@ public class Ejer3 {
             // Calculamos la diferencia en valor absoluto
             int diferencia = Math.abs(sumaIzq - sumaDer);
 
-            // Actualizamos el centro si es necesario
+            // Actualizamos el centro si la diferencia es menor
             if (diferencia < diferenciaCentro) {
                 diferenciaCentro = diferencia;
                 indexCentro = i;
