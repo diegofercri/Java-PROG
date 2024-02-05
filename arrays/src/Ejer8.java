@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Ejer8 {
     /*
      * Comprobar si un array de 5x5 es un cuadro mágico. Se considera un cuadro
