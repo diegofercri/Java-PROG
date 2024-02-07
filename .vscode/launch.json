@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejer14",
+            "request": "launch",
+            "mainClass": "Ejer14",
+            "projectName": "JavaPROG_acad4c7e"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
