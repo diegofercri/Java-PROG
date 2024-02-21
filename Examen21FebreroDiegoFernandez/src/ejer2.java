@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Array {
+public class ejer2 {
     public static void main(String[] args) {
         // Creo el array y lo relleno con números aleatorios
         int[] array = new int[20];
