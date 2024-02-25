@@ -1,9 +1,9 @@
 package facultad;
 
-public class PersonalServicio extends Empleado {
+public class PersonaServicio extends Empleado {
     protected String seccion;
 
-    public PersonalServicio(String nombre, String apellidos, String dni, int numDespacho, String seccion) {
+    public PersonaServicio(String nombre, String apellidos, String dni, int numDespacho, String seccion) {
         super(nombre, apellidos, dni, numDespacho);
         this.seccion = seccion;
     }
@@ -18,6 +18,6 @@ public class PersonalServicio extends Empleado {
     
     @Override
 	public String toString() {
-		return "Estudiante: " + super.toString() + ", seccion=" + seccion;
+		return "Personal de Servicio: " + super.toString() + ", seccion=" + seccion;
 	}
 }

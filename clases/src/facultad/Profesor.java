@@ -18,6 +18,6 @@ public class Profesor extends Empleado {
 
     @Override
 	public String toString() {
-		return "Estudiante: " + super.toString() + ", departamento=" + departamento;
+		return "Profesor: " + super.toString() + ", departamento=" + departamento;
 	}
 }
