@@ -1,11 +1,13 @@
 package banco;
 
 public class Fijo extends Prestamo {
-    double interes;
+    protected double interes;
+    protected double cuota;
     
-    public Fijo(String titular, double cantidad, int duracion, double interes) {
+    public Fijo(String titular, double cantidad, double duracion, double interes) {
         super(titular, cantidad, duracion);
         this.interes = interes;
+        this.cuota = cuota();
     }
 
     public double getInteres() {
@@ -16,11 +18,20 @@ public class Fijo extends Prestamo {
         this.interes = interes;
     }
 
+    public double getCuota() {
+        return this.cuota;
+    }
+
+    public double cuota() {
+        return (this.capital * this.interes) / (1 - Math.pow(1 + this.interes, -(this.duracion * 12)));
+    }
+
     @Override
     public String toString() {
         return "{" +
             super.toString() +
             " interes='" + getInteres() + "'" +
+            " cuota='" + getCuota() + "'" +
             "}";
     }
 }

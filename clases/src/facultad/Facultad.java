@@ -84,5 +84,4 @@ public class Facultad {
 		}
 		return listaPorDespacho;
 	}
-
 }

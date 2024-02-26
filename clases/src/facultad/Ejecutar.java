@@ -1,7 +1,6 @@
 package facultad;
 
 public class Ejecutar {
-
 	public static void main(String[] args) {
 		
 		Estudiante e1 = new Estudiante("Laura", "Vico","039448485F", "S1DAM");
@@ -37,5 +36,4 @@ public class Ejecutar {
 		System.out.println("Alumnos de S1DAM: " + f.getAlumnosPorCursoArray("S1DAM"));
 		System.out.println("Personal en el despacho 204: " + f.getPersonalPorDespachoArray(204));
 	}
-
 }

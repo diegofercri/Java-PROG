@@ -1,16 +1,14 @@
 package banco;
 
-public class Prestamo {
-    String titular;
-    double cantidad;
-    int duracion;
-    double cuota;
+public abstract class Prestamo {
+    protected String titular;
+    protected double capital;
+    protected double duracion;
 
-    public Prestamo(String titular, double cantidad, int duracion) {
+    protected Prestamo(String titular, double capital, double duracion) {
         this.titular = titular;
-        this.cantidad = cantidad;
+        this.capital = capital;
         this.duracion = duracion;
-        this.cuota = 
     }
 
     public String getTitular() {
@@ -21,19 +19,19 @@ public class Prestamo {
         this.titular = titular;
     }
 
-    public double getCantidad() {
-        return this.cantidad;
+    public double getCapital() {
+        return this.capital;
     }
 
-    public void setCantidad(double cantidad) {
-        this.cantidad = cantidad;
+    public void setCapital(double capital) {
+        this.capital = capital;
     }
 
-    public int getDuracion() {
+    public double getDuracion() {
         return this.duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(double duracion) {
         this.duracion = duracion;
     }
     
@@ -41,10 +39,8 @@ public class Prestamo {
     public String toString() {
         return "{" +
             " titular='" + getTitular() + "'" +
-            ", cantidad='" + getCantidad() + "'" +
+            ", capital='" + getCapital() + "'" +
             ", duracion='" + getDuracion() + "'" +
             "}";
     }
-
-
 }
