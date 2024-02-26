@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejecutar",
+            "request": "launch",
+            "mainClass": "banco.Ejecutar",
+            "projectName": "JavaPROG_cc9e73c7"
+        },
+        {
+            "type": "java",
             "name": "Ejer14",
             "request": "launch",
             "mainClass": "Ejer14",
