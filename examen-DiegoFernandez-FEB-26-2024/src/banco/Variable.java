@@ -19,7 +19,7 @@ public class Variable extends Prestamo {
     public Variable(String titular, double cantidad, double duracion, double euribor) {
         super(titular, cantidad, duracion);
         this.euribor = euribor;
-        this.diferencial = 0.75;
+        this.diferencial = 0.075;
         this.interes = this.euribor + this.diferencial;
         this.revision = 6;
         this.cuota = cuota();

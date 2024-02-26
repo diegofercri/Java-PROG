@@ -3,13 +3,13 @@ package banco;
 public class Ejecutar {
     public static void main(String[] args) {
 
-        Fijo fijo1 = new Fijo("Laura Vico", 15000, 3, 0.5);
-        Fijo fijo2 = new Fijo("Marcos Ruiz", 15000, 2, 0.5);
-        Fijo fijo3 = new Fijo("Gema Santos", 25000, 4, 0.5);
+        Fijo fijo1 = new Fijo("Laura Vico", 15000, 3, 0.05);
+        Fijo fijo2 = new Fijo("Marcos Ruiz", 15000, 2, 0.05);
+        Fijo fijo3 = new Fijo("Gema Santos", 25000, 4, 0.05);
 
-        Variable vari1 = new Variable("Luis Gonzalez", 15000, 2, 0.5, 0);
-        Variable vari2 = new Variable("Sonia Ramos", 15000, 4, 0.25);
-        Variable vari3 = new Variable("Ana Perez", 25000, 1, 0.25);
+        Variable vari1 = new Variable("Luis Gonzalez", 15000, 2, 0.05, 0);
+        Variable vari2 = new Variable("Sonia Ramos", 15000, 4, 0.025);
+        Variable vari3 = new Variable("Ana Perez", 25000, 1, 0.025);
 
         Pasivo pasivo = new Pasivo();
 
