@@ -4,6 +4,6 @@
 /**
  * 
  */
-module Ventanas {
+module ventanas {
 	requires java.desktop;
 }
