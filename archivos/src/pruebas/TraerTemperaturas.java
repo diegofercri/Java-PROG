@@ -9,7 +9,6 @@ import java.io.IOException;
 public class TraerTemperaturas {
     public static void main(String[] args) {
 
-        double temp;
         File archive = new File("temperatura.txt");
         try {
             DataInputStream stream = new DataInputStream(new FileInputStream(archive));

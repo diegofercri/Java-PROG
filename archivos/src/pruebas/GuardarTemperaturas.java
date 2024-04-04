@@ -9,12 +9,11 @@ import java.io.IOException;
 public class GuardarTemperaturas {
     public static void main(String[] args) {
 
-        double temp;
         File archive = new File("temperatura.txt");
         try {
             DataOutputStream stream = new DataOutputStream(new FileOutputStream(archive));
             for (int i = 0; i < 10; i++) {
-                stream.writeDouble(temp = Math.random() * 50);
+                stream.writeDouble(Math.random() * 50);
             }
             stream.close();
         } catch (FileNotFoundException e) {
