@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Prueba {
+public class EscribirTexto {
     public static void main(String[] args) {
         
         File archive = new File("textoPlano.txt");
@@ -15,6 +15,8 @@ public class Prueba {
         try {
             stream = new BufferedWriter(new FileWriter(archive));
             stream.write("Hola mundo");
+            stream.newLine();
+            stream.write("Adios mundo");
         } catch (IOException e) {
             System.out.println("No se puede escribir el archivo");
         } finally {
