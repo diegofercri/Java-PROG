@@ -69,10 +69,10 @@ public class Taxi extends JFrame {
 		lblNewLabel_1.setBounds(125, 71, 104, 25);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_1_3 = new JLabel("Total:");
-		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblNewLabel_1_3.setBounds(51, 195, 60, 25);
-		contentPane.add(lblNewLabel_1_3);
+		JLabel lblNewLabel_2 = new JLabel("Total:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_2.setBounds(51, 195, 60, 25);
+		contentPane.add(lblNewLabel_2);
 		
 		chckbxNewCheckBox_idaVuelta = new JCheckBox("Ida y Vuelta");
 		chckbxNewCheckBox_idaVuelta.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -129,7 +129,6 @@ public class Taxi extends JFrame {
 				textField_total.setText(String.valueOf(total));
 			}
 		} catch (HeadlessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (NumberFormatException e) {
 		    JOptionPane.showMessageDialog(this, "Por favor, introduce un número válido", "Error", JOptionPane.WARNING_MESSAGE);
