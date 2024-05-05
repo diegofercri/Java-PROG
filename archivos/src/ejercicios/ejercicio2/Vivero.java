@@ -3,7 +3,7 @@ package ejercicios.ejercicio2;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Rebajas {
+public class Vivero {
 
     public static File archivo = new File(".\\src\\ejercicios\\ejercicio2\\Plantas.venta");  
     public static void main(String[] args) {
