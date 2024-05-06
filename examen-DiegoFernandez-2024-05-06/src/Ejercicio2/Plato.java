@@ -2,7 +2,7 @@ package ejercicio2;
 
 import java.io.Serializable;
 
-public class Plato {
+public class Plato implements Serializable{
 	private String descripcion;
 	private float precio;
 	

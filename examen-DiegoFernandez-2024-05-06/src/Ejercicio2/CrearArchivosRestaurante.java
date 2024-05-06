@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class CrearArchivosRestaurante {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		File archivoPlatos=new File("platos.obj");
-		File archivoMenus=new File("menus.obj");
+		File archivoPlatos=new File(".\\src\\ejercicio2\\platos.obj");
+		File archivoMenus=new File(".\\src\\ejercicio2\\menus.obj");
 
 		ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream(archivoPlatos));
 		
