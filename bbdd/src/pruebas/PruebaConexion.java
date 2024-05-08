@@ -9,74 +9,75 @@ import java.sql.Statement;
 public class PruebaConexion {
 
 	public static void main(String[] args) {
-		// Probamos la conexion con BBDD mysql
+		// Probamos la conexión con BBDD mysql
 
-		// Cargamos el driver de JDBC
 		try {
+			// Cargar el driver JDBC
 			Class.forName("com.mysql.jdbc.Driver");
 
-			// Conectar con la base de datos
-			// Primero preparamos la url de conexion
+			// Conectar con la BBDD
+			// Primero preparamos la url de conexión
 			String url = "jdbc:mysql://localhost/agenda";
-
-			// Creo el objeto conexion
+			//Creo el objeto Conexion: Ponemos la url, el usuario y la contraseña
 			Connection conexion = DriverManager.getConnection(url, "root", "");
 
-			// Ahora lo que tenemos que hacer es lanzar sentencias SQL
+			// Lanzar sentencias SQL
 			// Preparamos el objeto Sentencia(Statement)
 			Statement sentencia = conexion.createStatement();
-
+			
 			/*
-			 * // Preparamos el insert String sql =
-			 * "INSERT INTO contacto VALUES ('Javier', 681246962)";
-			 * sentencia.executeUpdate(sql); sql =
-			 * "INSERT INTO contacto VALUES ('María', 603939833)";
-			 * sentencia.executeUpdate(sql); sql =
-			 * "INSERT INTO contacto VALUES ('Luis', 66656443)";
-			 * sentencia.executeUpdate(sql);
-			 */
-
+			// Preparar el INSERT
+			String sql = "INSERT INTO contacto VALUES('Daniel', '675913465')";
+			sentencia.executeUpdate(sql);
+			sql = "INSERT INTO contacto VALUES('Luis', '843657612')";
+			sentencia.executeUpdate(sql);
+			sql = "INSERT INTO contacto VALUES('Maria', '923546789')";
+			sentencia.executeUpdate(sql);
+			*/
+			
 			/*
-			 * // Lanzar UPDATE String sql =
-			 * "UPDATE contacto SET telefono='666666666' WHERE nombre='Javier'";
-			 * sentencia.executeUpdate(sql);
-			 */
-
+			// Lanzar un UPDATE
+			String sql = "UPDATE contacto SET telefono=666666666 WHERE nombre='Maria'";
+			sentencia.executeUpdate(sql);
+			*/
+			
 			/*
-			 * // Deberiamos hacer un COMMIT para validar los cambios, aunque MySQL tiene
-			 * autocommit conexion.commit();
-			 */
-
+			// Deberíamos hacer un COMIT para validar los cambios, aunque MySQL tiene autocomit
+			conexion.commit(); //no lo usamos porque tenemos autocomit
+			*/
+			
 			// Lanzar un SELECT
 			String sql = "SELECT * FROM contacto";
 			ResultSet resultado = sentencia.executeQuery(sql);
-
+				
 			/*
-			// Avanzo y me situo en la primera tupla
+			// Avanzo y me situo en la primera dupla
 			resultado.next();
 			System.out.println(resultado.getString("nombre"));
 			System.out.println(resultado.getLong("telefono"));
-
-			// Avanzo y me situo en la segunda tupla
+			resultado.next();
+			System.out.println(resultado.getString(1));
+			System.out.println(resultado.getLong(2));
+			resultado.next();
+			System.out.println(resultado.getString(1));
+			System.out.println(resultado.getLong(2));
 			resultado.next();
 			System.out.println(resultado.getString(1));
 			System.out.println(resultado.getLong(2));
 			*/
 			
+			// Mostramos todas las tuplas obtenidas
 			while (resultado.next()) {
-				System.out.println(resultado.getString(1));
-				System.out.println(resultado.getLong(2));
-			}
-			
+				System.out.println(resultado.getString(1) + " " + resultado.getLong(2));
+			} 
 
 		} catch (ClassNotFoundException e) {
-			System.out.println("Error cargando el driver");
+			System.out.println("Error cargando el Driver");
 			e.printStackTrace();
 		} catch (SQLException e) {
-			System.out.println("Error conectando a la base de datos");
+			System.out.println("Error en sentencia SQL");
 			e.printStackTrace();
 		}
-
 	}
 
 }
