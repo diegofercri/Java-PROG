@@ -7,6 +7,14 @@ import java.sql.SQLException;
 public class DBConnection {
 	private Connection conexion;
 
+	public Connection getConexion() {
+		return conexion;
+	}
+
+	public void setConexion(Connection conexion) {
+		this.conexion = conexion;
+	}
+
 	public DBConnection()  {
 		try {
 		// Cargar el driver JDBC
