@@ -6,10 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ConexionDB {
+public class DBConection {
 	private Connection conexion;
-	
-	try {
+
+	public DBConection()  {
+		try {
 		// Cargar el driver JDBC
 		Class.forName("com.mysql.jdbc.Driver");
 
@@ -17,8 +18,7 @@ public class ConexionDB {
 		// Primero preparamos la url de conexión
 		String url = "jdbc:mysql://localhost/agenda";
 		//Creo el objeto Conexion: Ponemos la url, el usuario y la contraseña
-		conexion = DriverManager.getConnection(url, "root", "");
-
+		Connection conexion = DriverManager.getConnection(url, "root", "");
 
 	} catch (ClassNotFoundException e) {
 		System.out.println("Error cargando el Driver");
@@ -27,5 +27,6 @@ public class ConexionDB {
 		System.out.println("Error en sentencia SQL");
 		e.printStackTrace();
 	}
-	
+	}
+
 }
