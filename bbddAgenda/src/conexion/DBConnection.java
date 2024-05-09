@@ -2,14 +2,12 @@ package conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class DBConection {
+public class DBConnection {
 	private Connection conexion;
 
-	public DBConection()  {
+	public DBConnection()  {
 		try {
 		// Cargar el driver JDBC
 		Class.forName("com.mysql.jdbc.Driver");
@@ -18,7 +16,7 @@ public class DBConection {
 		// Primero preparamos la url de conexión
 		String url = "jdbc:mysql://localhost/agenda";
 		//Creo el objeto Conexion: Ponemos la url, el usuario y la contraseña
-		Connection conexion = DriverManager.getConnection(url, "root", "");
+		conexion = DriverManager.getConnection(url, "root", "");
 
 	} catch (ClassNotFoundException e) {
 		System.out.println("Error cargando el Driver");
