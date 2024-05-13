@@ -32,14 +32,6 @@ public class DAOContacto {
 		Connection conexion = new DBConnection().getConexion();
 		
 		try {
-			/*
-			// Preparamos el objeto sentencia(Statement)
-			Statement sentencia = conexion.createStatement();
-			
-			// Preparamos insert
-			String sql = "INSERT INTO contacto VALUES('"+c.getNombre()+"', "+c.getTelefono()+")";
-			*/
-			
 			// Usando un PreparedStatement
 			String sql = "INSERT INTO contacto VALUES(?,?)";
 			
@@ -51,15 +43,14 @@ public class DAOContacto {
 			sentencia.setLong(2, c.getTelefono());
 			
 			// Ejecutamos
-			System.out.println(sql);
-			sentencia.executeUpdate(sql);
+			sentencia.executeUpdate();
 			
 			// Cerramos la conexion
 			conexion.close();
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error insertando contacto");
+			System.out.print("Error insertando el contacto");
 			e.printStackTrace();
 		}
 	}
@@ -87,7 +78,7 @@ public class DAOContacto {
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error insertando contacto");
+			System.out.print("Error actualizando el contacto");
 			e.printStackTrace();
 		}
 		
@@ -116,10 +107,69 @@ public class DAOContacto {
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error insertando contacto");
+			System.out.print("Error obteniendo los contactos");
 			e.printStackTrace();
 		}
 		
 		return Contactos;
+	}
+	
+	public Contacto getContacto(String nombre) {
+		// Obtenemos la conexion a la BBDD
+		Connection conexion = new DBConnection().getConexion();
+		Contacto c = null;
+		
+		try {
+			// Usando un PreparedStatement
+			String sql = "SELECT nombre, telefono FROM contacto WHERE nombre=?";
+			
+			// Creamos el Statement
+			PreparedStatement sentencia = conexion.prepareStatement(sql);
+			sentencia.setString(1, nombre);
+			
+			ResultSet resultado = sentencia.executeQuery();
+			
+			if (resultado.next()) {
+				c = new Contacto(resultado.getString(1), resultado.getLong(2));
+			}
+			
+			// Cerramos la conexion
+			conexion.close();
+			
+			
+		} catch (SQLException e) {
+			System.out.print("Error obteniendo el contacto");
+			e.printStackTrace();
+		}
+		
+		return c;
+	}
+	
+	public void delete(Contacto c) {
+		// Obtenemos la conexion a la BBDD
+		Connection conexion = new DBConnection().getConexion();
+		
+		try {
+			// Usando un PreparedStatement
+			String sql = "DELETE FROM contacto WHERE nombre=?";
+			
+			// Creamos el Statement
+			PreparedStatement sentencia = conexion.prepareStatement(sql);
+			
+			// Sustituimos las interrogaciones
+			sentencia.setString(1, c.getNombre());
+			
+			// Ejecutamos
+			sentencia.executeUpdate(sql);
+			
+			// Cerramos la conexion
+			conexion.close();
+			
+			
+		} catch (SQLException e) {
+			System.out.print("Error borrando el contacto");
+			e.printStackTrace();
+		}
+		
 	}
 }
