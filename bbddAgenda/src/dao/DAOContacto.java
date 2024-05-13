@@ -71,7 +71,7 @@ public class DAOContacto {
 			sentencia.setLong(1, c.getTelefono());
 			
 			// Ejecutamos
-			sentencia.executeUpdate(sql);
+			sentencia.executeUpdate();
 			
 			// Cerramos la conexion
 			conexion.close();
@@ -160,7 +160,7 @@ public class DAOContacto {
 			sentencia.setString(1, c.getNombre());
 			
 			// Ejecutamos
-			sentencia.executeUpdate(sql);
+			sentencia.executeUpdate();
 			
 			// Cerramos la conexion
 			conexion.close();
