@@ -5,13 +5,11 @@ import java.util.ArrayList;
 public class Poblacion {
 	private String nombre;
 	private int numHabitantes;
-	private ArrayList<Habitante> Habitantes;
 	
-	public Poblacion(String nombre, int numHabitantes, ArrayList<Habitante> habitantes) {
+	public Poblacion(String nombre, int numHabitantes) {
 		super();
 		this.nombre = nombre;
-		this.numHabitantes = habitantes.size();
-		Habitantes = habitantes;
+		this.numHabitantes = numHabitantes;
 	}
 
 	public String getNombre() {
@@ -30,21 +28,9 @@ public class Poblacion {
 		this.numHabitantes = numHabitantes;
 	}
 
-	public ArrayList<Habitante> getHabitantes() {
-		return Habitantes;
-	}
-
-	public void setHabitantes(ArrayList<Habitante> habitantes) {
-		Habitantes = habitantes;
-	}
-	
-	public void addHabitante(Habitante h) {
-		
-	}
-
 	@Override
 	public String toString() {
-		return "Poblacion [nombre=" + nombre + ", numHabitantes=" + numHabitantes + ", Habitantes=" + Habitantes + "]";
+		return "Poblacion [nombre=" + nombre + ", numHabitantes=" + numHabitantes + "]";
 	}
 	
 }

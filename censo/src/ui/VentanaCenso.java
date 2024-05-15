@@ -104,7 +104,7 @@ public class VentanaCenso extends JFrame {
 					{null, null, null, null},
 				},
 				new String[] {
-						"Nombre", "email", "Edad", "Poblacion"
+						"Nombre", "Email", "Edad", "Poblacion"
 				}
 				) {
 			Class[] columnTypes = new Class[] {
@@ -131,11 +131,11 @@ public class VentanaCenso extends JFrame {
 	}
 
 	private void cargarTablaPoblacion() {
-		ArrayList<Poblacion> lista = daoPoblacion.get();
+		ArrayList<Poblacion> lista = daoPoblacion.getPoblaciones();
 		Object[][] datos = new Object[lista.size()][2];
 		for(int i=0;i<lista.size();i++) {
 			datos[i][0]=lista.get(i).getNombre();
-			datos[i][1]=lista.get(i).getNumeroDeHabitantes();
+			datos[i][1]=lista.get(i).getNumHabitantes();
 		}
 		tablePoblacion.setModel(new DefaultTableModel(
 				datos,
@@ -163,9 +163,9 @@ public class VentanaCenso extends JFrame {
 	private void cargarTablaHabitantes() {
 		ArrayList<Habitante> lista;
 		if(tablePoblacion.getSelectedRow()!=-1) {
-			lista = daoHabitante.getHabitantesDeUnaPoblacion((String)tablePoblacion.getValueAt(tablePoblacion.getSelectedRow(), 0));
-		}else {
-			lista = daoHabitante.get();
+			lista = daoHabitante.getHabitantesPorPoblacion((String)tablePoblacion.getValueAt(tablePoblacion.getSelectedRow(), 0));
+		} else {
+			lista = daoHabitante.getHabitantes();
 		}
 		Object[][] datos = new Object[lista.size()][4];
 		for(int i=0;i<lista.size();i++) {

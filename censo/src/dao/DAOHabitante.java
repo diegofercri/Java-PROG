@@ -40,7 +40,7 @@ public class DAOHabitante {
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error insertando el contacto");
+			System.out.print("Error insertando el habitante");
 			e.printStackTrace();
 		}
 	}
@@ -51,7 +51,7 @@ public class DAOHabitante {
 		
 		try {
 			// Usando un PreparedStatement
-			String sql = "UPDATE contacto SET email=? WHERE nombre=?";
+			String sql = "UPDATE habitante SET email=? WHERE nombre=?";
 			
 			// Creamos el Statement
 			PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -68,7 +68,7 @@ public class DAOHabitante {
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error actualizando el contacto");
+			System.out.print("Error actualizando el habitante");
 			e.printStackTrace();
 		}
 		
@@ -80,7 +80,7 @@ public class DAOHabitante {
 		
 		try {
 			// Usando un PreparedStatement
-			String sql = "UPDATE contacto SET edad=? WHERE nombre=?";
+			String sql = "UPDATE habitante SET edad=? WHERE nombre=?";
 			
 			// Creamos el Statement
 			PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -97,7 +97,7 @@ public class DAOHabitante {
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error actualizando el contacto");
+			System.out.print("Error actualizando el habitante");
 			e.printStackTrace();
 		}
 		
@@ -109,7 +109,7 @@ public class DAOHabitante {
 		
 		try {
 			// Usando un PreparedStatement
-			String sql = "UPDATE contacto SET poblacion=? WHERE nombre=?";
+			String sql = "UPDATE habitante SET poblacion=? WHERE nombre=?";
 			
 			// Creamos el Statement
 			PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -126,20 +126,21 @@ public class DAOHabitante {
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error actualizando el contacto");
+			System.out.print("Error actualizando el habitante");
 			e.printStackTrace();
 		}
 		
 	}
 	
-	public ArrayList<Contacto> get() {
+	
+	public ArrayList<Habitante> getHabitantes() {
 		// Obtenemos la conexion a la BBDD
 		Connection conexion = new DBConnection().getConexion();
-		ArrayList<Contacto> Contactos = new ArrayList<Contacto>();
+		ArrayList<Habitante> Habitantes = new ArrayList<>();
 		
 		try {
 			// Usando un PreparedStatement
-			String sql = "SELECT nombre, telefono FROM contacto";
+			String sql = "SELECT nombre, email, edad, poblacion FROM habitante";
 			
 			// Creamos el Statement
 			PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -147,7 +148,7 @@ public class DAOHabitante {
 			ResultSet resultado = sentencia.executeQuery();
 			
 			while (resultado.next()) {
-				Contactos.add(new Contacto(resultado.getString(1), resultado.getLong(2)));
+				Habitantes.add(new Habitante(resultado.getString(1), resultado.getString(2), resultado.getInt(3), resultado.getString(4)));
 			}
 			
 			// Cerramos la conexion
@@ -155,21 +156,52 @@ public class DAOHabitante {
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error obteniendo los contactos");
+			System.out.print("Error obteniendo los habitantes");
 			e.printStackTrace();
 		}
 		
-		return Contactos;
+		return Habitantes;
 	}
 	
-	public Contacto getContacto(String nombre) {
+	public ArrayList<Habitante> getHabitantesPorPoblacion(String nombre) {
 		// Obtenemos la conexion a la BBDD
 		Connection conexion = new DBConnection().getConexion();
-		Contacto c = null;
+		ArrayList<Habitante> Habitantes = new ArrayList<>();
 		
 		try {
 			// Usando un PreparedStatement
-			String sql = "SELECT nombre, telefono FROM contacto WHERE nombre=?";
+			String sql = "SELECT nombre, email, edad, poblacion FROM habitante WHERE poblacion=?";
+			
+			// Creamos el Statement
+			PreparedStatement sentencia = conexion.prepareStatement(sql);
+			sentencia.setString(1, nombre);
+			
+			ResultSet resultado = sentencia.executeQuery();
+			
+			while (resultado.next()) {
+				Habitantes.add(new Habitante(resultado.getString(1), resultado.getString(2), resultado.getInt(3), resultado.getString(4)));
+			}
+			
+			// Cerramos la conexion
+			conexion.close();
+			
+			
+		} catch (SQLException e) {
+			System.out.print("Error obteniendo los habitantes");
+			e.printStackTrace();
+		}
+		
+		return Habitantes;
+	}
+	
+	public Habitante getHabitante(String nombre) {
+		// Obtenemos la conexion a la BBDD
+		Connection conexion = new DBConnection().getConexion();
+		Habitante h = null;
+		
+		try {
+			// Usando un PreparedStatement
+			String sql = "SELECT nombre, email, edad, poblacion FROM habitante WHERE nombre=?";
 			
 			// Creamos el Statement
 			PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -178,7 +210,7 @@ public class DAOHabitante {
 			ResultSet resultado = sentencia.executeQuery();
 			
 			if (resultado.next()) {
-				c = new Contacto(resultado.getString(1), resultado.getLong(2));
+				h = new Habitante(resultado.getString(1), resultado.getString(2), resultado.getInt(3), resultado.getString(4));
 			}
 			
 			// Cerramos la conexion
@@ -186,26 +218,26 @@ public class DAOHabitante {
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error obteniendo el contacto");
+			System.out.print("Error obteniendo el habitante");
 			e.printStackTrace();
 		}
 		
-		return c;
+		return h;
 	}
 	
-	public void delete(Contacto c) {
+	public void delete(Habitante h) {
 		// Obtenemos la conexion a la BBDD
 		Connection conexion = new DBConnection().getConexion();
 		
 		try {
 			// Usando un PreparedStatement
-			String sql = "DELETE FROM contacto WHERE nombre=?";
+			String sql = "DELETE FROM habitante WHERE nombre=?";
 			
 			// Creamos el Statement
 			PreparedStatement sentencia = conexion.prepareStatement(sql);
 			
 			// Sustituimos las interrogaciones
-			sentencia.setString(1, c.getNombre());
+			sentencia.setString(1, h.getNombre());
 			
 			// Ejecutamos
 			sentencia.executeUpdate();
@@ -215,7 +247,7 @@ public class DAOHabitante {
 			
 			
 		} catch (SQLException e) {
-			System.out.print("Error borrando el contacto");
+			System.out.print("Error borrando el habitante");
 			e.printStackTrace();
 		}
 		

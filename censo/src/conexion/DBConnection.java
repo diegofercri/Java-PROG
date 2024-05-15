@@ -22,7 +22,7 @@ public class DBConnection {
 
 		// Conectar con la BBDD
 		// Primero preparamos la url de conexión
-		String url = "jdbc:mysql://localhost/agenda";
+		String url = "jdbc:mysql://localhost/censo";
 		//Creo el objeto Conexion: Ponemos la url, el usuario y la contraseña
 		conexion = DriverManager.getConnection(url, "root", "");
 
