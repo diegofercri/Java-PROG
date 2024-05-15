@@ -46,7 +46,7 @@ public class DAOPoblacion {
 	public ArrayList<Poblacion> getPoblaciones() {
 		// Obtenemos la conexion a la BBDD
 		Connection conexion = new DBConnection().getConexion();
-		ArrayList<Poblacion> poblaciones = new ArrayList<>();
+		ArrayList<Poblacion> Poblaciones = new ArrayList<>();
 		
 		try {
 			// Usando un PreparedStatement
@@ -58,7 +58,7 @@ public class DAOPoblacion {
 			ResultSet resultado = sentencia.executeQuery();
 			
 			while (resultado.next()) {
-				poblaciones.add(new Poblacion(resultado.getString(1), resultado.getInt(2)));
+				Poblaciones.add(new Poblacion(resultado.getString(1), resultado.getInt(2)));
 			}
 			
 			// Cerramos la conexion
@@ -70,7 +70,7 @@ public class DAOPoblacion {
 			e.printStackTrace();
 		}
 		
-		return poblaciones;
+		return Poblaciones;
 	}
 	
 	public Poblacion getPoblacion(String nombre) {
@@ -101,7 +101,7 @@ public class DAOPoblacion {
 			e.printStackTrace();
 		}
 		
-		return p;
+		return h;
 	}
 	
 	public void delete(Poblacion p) {
