@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 
 import conexion.DBConnection;
 import entidades.Inmueble;
+import entidades.Venta;
 
 public class DAOInmueble {
     public DAOInmueble() {
