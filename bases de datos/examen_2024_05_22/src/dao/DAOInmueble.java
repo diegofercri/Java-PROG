@@ -16,7 +16,7 @@ public class DAOInmueble {
 	
 	// add()
     // get() que retorna todos los objetos Inmueble
-    // getListaInmueblesSinVender()  que  retorna  los  Listainmuebles  que  todavía  no  se  han vendido
+    // getlistaInmueblesSinVender()  que  retorna  los  listainmuebles  que  todavía  no  se  han vendido
 	
 	public void add(Inmueble i) {
 		// Obtenemos la conexion a la BBDD
@@ -53,7 +53,7 @@ public class DAOInmueble {
 	public ArrayList<Inmueble> get() {
 		// Obtenemos la conexion a la BBDD
 		Connection conexion = new DBConnection().getConexion();
-		ArrayList<Inmueble> ListaInmuebles = new ArrayList<Inmueble>();
+		ArrayList<Inmueble> listaInmuebles = new ArrayList<Inmueble>();
 		
 		try {
 			// Usando un PreparedStatement
@@ -65,7 +65,7 @@ public class DAOInmueble {
 			ResultSet resultado = sentencia.executeQuery();
 			
 			while (resultado.next()) {
-				ListaInmuebles.add(new Inmueble(resultado.getInt(1), resultado.getDate(2), resultado.getString(3), resultado.getString(4), resultado.getInt(5), resultado.getFloat(6)));
+				listaInmuebles.add(new Inmueble(resultado.getInt(1), resultado.getDate(2), resultado.getString(3), resultado.getString(4), resultado.getInt(5), resultado.getFloat(6)));
 			}
 			
 			// Cerramos la conexion
@@ -77,13 +77,13 @@ public class DAOInmueble {
 			e.printStackTrace();
 		}
 		
-		return ListaInmuebles;
+		return listaInmuebles;
 	}
 
 	public ArrayList<Inmueble> getInmueblesSinVenver() {
 		// Obtenemos la conexion a la BBDD
 		Connection conexion = new DBConnection().getConexion();
-		ArrayList<Inmueble> ListaInmuebles = new ArrayList<Inmueble>();
+		ArrayList<Inmueble> listaInmuebles = new ArrayList<Inmueble>();
 		
 		try {
 			// Usando un PreparedStatement
@@ -95,7 +95,7 @@ public class DAOInmueble {
 			ResultSet resultado = sentencia.executeQuery();
 			
 			while (resultado.next()) {
-				ListaInmuebles.add(new Inmueble(resultado.getInt(1), resultado.getDate(2), resultado.getString(3), resultado.getString(4), resultado.getInt(5), resultado.getFloat(6)));
+				listaInmuebles.add(new Inmueble(resultado.getInt(1), resultado.getDate(2), resultado.getString(3), resultado.getString(4), resultado.getInt(5), resultado.getFloat(6)));
 			}
 			
 			// Cerramos la conexion
@@ -107,6 +107,6 @@ public class DAOInmueble {
 			e.printStackTrace();
 		}
 		
-		return ListaInmuebles;
+		return listaInmuebles;
 	}
 }

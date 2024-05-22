@@ -52,7 +52,7 @@ public class DAOVenta {
 	public ArrayList<Venta> get() {
 		// Obtenemos la conexion a la BBDD
 		Connection conexion = new DBConnection().getConexion();
-		ArrayList<Venta> ListaVentas = new ArrayList<Venta>();
+		ArrayList<Venta> listaVentas = new ArrayList<Venta>();
 		
 		try {
 			// Usando un PreparedStatement
@@ -64,7 +64,7 @@ public class DAOVenta {
 			ResultSet resultado = sentencia.executeQuery();
 			
 			while (resultado.next()) {
-				ListaVentas.add(new Venta(resultado.getInt(1), resultado.getDate(2), resultado.getString(3)));
+				listaVentas.add(new Venta(resultado.getInt(1), resultado.getDate(2), resultado.getString(3)));
 			}
 			
 			// Cerramos la conexion
@@ -76,7 +76,7 @@ public class DAOVenta {
 			e.printStackTrace();
 		}
 		
-		return ListaVentas;
+		return listaVentas;
 	}
 	
 	public Venta get(int referencia) {
@@ -86,7 +86,7 @@ public class DAOVenta {
 		
 		try {
 			// Usando un PreparedStatement
-			String sql = "SELECT referencia, fechaVenta, vendedor FROM Venta WHERE codigo NOT IN (SELECT referencia FROM Venta)";
+			String sql = "SELECT referencia, fechaVenta, vendedor FROM Venta WHERE referencia = ?";
 			
 			// Creamos el Statement
 			PreparedStatement sentencia = conexion.prepareStatement(sql);
